@@ -1,37 +1,37 @@
 import random
 
-# اول یه پیام برای شروع بازی نشون میدیم
-print("به بازی حدس عدد خوش اومدی!")
-print("من یه عدد بین 1 تا 20 انتخاب کردم.")
-print("ببینم میتونی حدسش بزنی یا نه.")
+# Show a welcome message when the game starts
+print("Welcome to the Number Guessing Game!")
+print("I picked a number between 1 and 20.")
+print("Let's see if you can guess it.")
 
-# اینجا کامپیوتر یه عدد تصادفی بین 1 تا 20 انتخاب میکنه
+# Choose a random number between 1 and 20
 secret_number = random.randint(1, 20)
 
-# تعداد تلاش ها رو از صفر شروع میکنیم
+# Start counting the attempts from zero
 attempts = 0
 
-# تا وقتی جواب درست نشده، بازی ادامه داره
+# Keep the game running until the correct number is guessed
 while True:
 
-    # از کاربر میخوایم حدس خودش رو وارد کنه
-    guess = int(input("حدست رو وارد کن: "))
+    # Ask the user to enter a guess
+    guess = int(input("Enter your guess: "))
 
-    # هر بار که حدس میزنه، یکی به تعداد تلاش ها اضافه میشه
+    # Add one to the number of attempts
     attempts += 1
 
-    # اگر حدس از عدد مخفی کوچکتر باشه
+    # Check if the guess is smaller than the secret number
     if guess < secret_number:
-        print("اشتباهه! عدد من بزرگ تره.")
+        print("Wrong! My number is higher.")
 
-    # اگر حدس از عدد مخفی بزرگتر باشه
+    # Check if the guess is bigger than the secret number
     elif guess > secret_number:
-        print("اشتباهه! عدد من کوچکتره.")
+        print("Wrong! My number is lower.")
 
-    # اگر هیچکدوم نباشه، یعنی جواب درسته
+    # If neither condition is true, the guess is correct
     else:
-        print("آفرین! درست حدس زدی.")
-        print(f"تعداد تلاش های تو: {attempts}")
+        print("Congratulations! You guessed the correct number.")
+        print(f"Number of attempts: {attempts}")
 
-        # جواب درست شده، پس از حلقه خارج میشیم
+        # The correct number was guessed, so we leave the loop
         break
