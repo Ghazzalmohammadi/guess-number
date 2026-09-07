@@ -1,155 +1,61 @@
-بازی حدس عدد با Python
+Number Guessing Game✨️
 
-درود
+Hello!🤗
 
-من غزل هستم و این یکی از پروژه‌های تمرینی من برای یادگیری زبان برنامه‌نویسی Python است.
+My name is Ghazal, and this is one of my beginner projects for learning Python.
 
-در این پروژه یک بازی ساده به نام Number Guessing Game ساختم.
+In this project, I created a simple Number Guessing Game using Python.
 
-در این بازی، کامپیوتر یک عدد تصادفی بین 1 تا 20 انتخاب می‌کند و بازیکن باید آن عدد را حدس بزند.
+The computer chooses a random number between 1 and 20, and the player has to guess the number.
 
-اگر حدس اشتباه باشد، برنامه به بازیکن می‌گوید عدد انتخاب‌شده بزرگ‌تر است یا کوچک‌تر.
+After each wrong guess, the program tells the player whether the secret number is higher or lower.
 
-همچنین تعداد تلاش‌های بازیکن نیز شمارش می‌شود.
+The program also counts the number of attempts.
 
-چیزهایی که در این پروژه استفاده کردم
+Concepts Used
 
 - Variables
 - "print()"
 - "input()"
 - "int()"
-- "if / elif / else"
+- "if"
+- "elif"
+- "else"
 - "while"
 - "break"
 - "import"
 - "random"
 - "random.randint()"
+- Counting attempts
 
-کد پروژه
+How the Game Works
 
-import random
+1. The computer chooses a random number between 1 and 20.
+2. The player enters a guess.
+3. The program checks the guess.
+4. If the guess is too low, the program says the number is higher.
+5. If the guess is too high, the program says the number is lower.
+6. When the player guesses correctly, the game ends.
+7. The program shows the total number of attempts.
 
-# اینجا یه پیام برای شروع بازی نمایش میدیم
-print("به بازی حدس عدد خوش اومدی!")
-print("من یه عدد بین 1 تا 20 انتخاب کردم.")
-print("ببینم میتونی حدسش بزنی یا نه.")
+Example
 
-# اینجا کامپیوتر یه عدد تصادفی بین 1 تا 20 انتخاب میکنه
-secret_number = random.randint(1, 20)
+Welcome to the Number Guessing Game!
+I have chosen a number between 1 and 20.
+Let's see if you can guess it!
 
-# تعداد تلاش ها رو از صفر شروع میکنیم
-attempts = 0
+Enter your guess: 8
+Wrong! My number is higher.
 
-# تا وقتی جواب درست نشده، این حلقه ادامه پیدا میکنه
-while True:
+Enter your guess: 15
+Wrong! My number is lower.
 
-    # از کاربر میخوایم حدس خودش رو وارد کنه
-    guess = int(input("حدست رو وارد کن: "))
+Enter your guess: 12
+Congratulations! You guessed the number!
+Number of attempts: 3
 
-    # هر بار که کاربر حدس میزنه، یکی به تعداد تلاش ها اضافه میشه
-    attempts += 1
+What I Learned
 
-    # اگر حدس کاربر از عدد مخفی کوچکتر باشه
-    if guess < secret_number:
-        print("اشتباهه! عدد من بزرگ تره.")
+This project helped me practice the basic Python concepts I have learned so far and use them together in a small working project.
 
-    # اگر حدس کاربر از عدد مخفی بزرگتر باشه
-    elif guess > secret_number:
-        print("اشتباهه! عدد من کوچکتره.")
-
-    # اگر هیچکدوم از حالت های بالا نباشه، یعنی جواب درسته
-    else:
-        print("آفرین! درست حدس زدی.")
-        print(f"تعداد تلاش های تو: {attempts}")
-
-        # چون جواب درست شده، از حلقه خارج میشیم
-        break
-
-توضیح کد
-
-1. وارد کردن ماژول random
-
-import random
-
-اینجا ماژول "random" رو وارد کردیم تا بتونیم از قابلیت‌های مربوط به عددهای تصادفی استفاده کنیم.
-
-2. ساخت عدد تصادفی
-
-secret_number = random.randint(1, 20)
-
-با "random.randint()" یک عدد تصادفی بین 1 تا 20 ساخته میشه.
-
-این عدد داخل متغیر "secret_number" قرار می‌گیره.
-
-3. گرفتن حدس کاربر
-
-guess = int(input("حدست رو وارد کن: "))
-
-با "input()" حدس کاربر رو می‌گیریم.
-
-چون "input()" مقدار رو به صورت متن دریافت می‌کنه، از "int()" استفاده کردیم تا اون رو به عدد تبدیل کنیم.
-
-4. حلقه while
-
-while True:
-
-این حلقه باعث میشه بازی تا زمانی که کاربر جواب درست رو پیدا نکرده ادامه داشته باشه.
-
-5. شرط‌ها
-
-if guess < secret_number:
-    print("اشتباهه! عدد من بزرگ تره.")
-
-elif guess > secret_number:
-    print("اشتباهه! عدد من کوچکتره.")
-
-else:
-    print("آفرین! درست حدس زدی.")
-
-اینجا حدس کاربر با عدد مخفی مقایسه میشه.
-
-اگر حدس کوچک‌تر باشه، برنامه میگه عدد بزرگ‌تره.
-
-اگر حدس بزرگ‌تر باشه، برنامه میگه عدد کوچک‌تره.
-
-اگر هیچ‌کدوم نباشه، یعنی جواب درست بوده.
-
-6. شمارش تلاش‌ها
-
-attempts = 0
-
-تعداد تلاش‌ها رو از صفر شروع می‌کنیم.
-
-بعد از هر حدس:
-
-attempts += 1
-
-یکی به تعداد تلاش‌ها اضافه میشه.
-
-7. خروج از حلقه
-
-break
-
-وقتی کاربر عدد درست رو حدس زد، با "break" از حلقه خارج می‌شیم و بازی تموم میشه.
-
-نمونه اجرای برنامه
-
-به بازی حدس عدد خوش اومدی!
-من یه عدد بین 1 تا 20 انتخاب کردم.
-ببینم میتونی حدسش بزنی یا نه.
-
-حدست رو وارد کن: 8
-اشتباهه! عدد من بزرگ تره.
-
-حدست رو وارد کن: 15
-اشتباهه! عدد من کوچکتره.
-
-حدست رو وارد کن: 12
-آفرین! درست حدس زدی.
-تعداد تلاش های تو: 3
-
-هدف پروژه
-
-هدف من از ساخت این پروژه این بود که مفاهیم پایه‌ای Python که یاد گرفتم رو در یک پروژه ساده کنار هم استفاده کنم.
-
-این پروژه یکی از تمرین‌های من برای شروع یادگیری برنامه‌نویسی با Python است.
+This is one of my first steps in learning Python and building projects with it.
