@@ -61,4 +61,4 @@ What I Learned
 This project helped me practice the basic Python concepts I have learned so far and use them together in a small working project.
 
 This is one of my first steps in learning Python and building projects with it.
-👋🏻🤍🫠
+👋🏻
